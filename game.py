@@ -255,10 +255,26 @@ class Game:
         self.score[outcome] += 1
 
     def auto_play_round(self):
+        """
+        -=:: Big Brain Algorithm ::=-
+               _---~~(~~-_.
+            _{        )   )
+          ,   ) -~~- ( ,-' )_
+         (  `-,_..`., )-- '_,)
+        ( ` _)  (  -~( -_ `,  }
+        (_-  _  ~_-~~~~`,  ,' )
+          `~ -^(    __;-,((()))
+                ~~~~ {_ -_(())
+                       `\  }
+                         { }
+        Win Rates:
+            v1: 100%
+            v2: 84%
+            v3: 100%
+            v4: 47%
+        """
         agent_says = self.robot_said
         if self.game_version in (2, 4) and self.agent_said:
-            # 84% win rate for v2
-            # 47% win rate for v4
             calc = (self.robot_said + self.agent_said) % 10
             agent_says = 1 if calc == 0 else calc
 
